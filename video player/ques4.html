@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p{display: inline;
+    margin: 15px;
+    }
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body >
+  
+  <div>
+<video width="840" height="480" controls  id="vid" autoplay="autoplay">
+  <source src="Tom and Jerry - Episode 77 - Just Ducky (1953).mp4" type="video/mp4">
+</video>
+<div>
+Total time (in seconds):
+<p class="tt"></p>
+Current time (in seconds):
+<p class="ct"></p>
+Remaining time (in seconds):
+<p class="rt"></p>
+</div>
+</div>
+<script>
+
+
+var video = document.getElementById("vid");
+
+video.ontimeupdate=function(){
+$('.tt').html(parseInt(video.duration));
+$('.ct').html(parseInt(video.currentTime));
+$('.rt').html(parseInt(video.duration)-parseInt(video.currentTime));
+};
+
+</script>
+</body>
+</html>
